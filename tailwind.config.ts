@@ -1,14 +1,13 @@
-import type { Config } from 'tailwindcss';
+import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  content: ["./app/**/*.{js,ts,jsx,tsx,mdx}", "./components/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       boxShadow: {
-        glow: '0 0 35px rgba(0, 132, 255, .35)',
-        warm: '0 0 35px rgba(255, 156, 51, .28)'
-      }
-    }
+        glow: "0 0 40px rgba(59, 130, 246, 0.35)",
+      },
+    },
   },
   plugins: [],
 };

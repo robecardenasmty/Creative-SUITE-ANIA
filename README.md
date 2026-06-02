@@ -1,30 +1,46 @@
-# Infografía AI Studio
+# Creative Suite ANIA
 
-Aplicación Next.js lista para GitHub + Vercel. Genera prompts editoriales y llama a OpenAI Images API de forma segura desde backend.
+Aplicación Next.js para generar infografías premium con OpenAI API.
 
-## Instalación local
+## Estructura correcta
+
+El repositorio debe incluir estas carpetas en la raíz:
+
+- `app/`
+- `components/`
+- `lib/`
+- `public/`
+
+Si falta `app/`, Vercel marcará este error:
+
+```txt
+Couldn't find any pages or app directory
+```
+
+## Deploy en Vercel
+
+1. Sube todo el contenido de esta carpeta a GitHub.
+2. Importa el repositorio en Vercel.
+3. En Vercel ve a Settings > Environment Variables.
+4. Agrega:
+
+```txt
+OPENAI_API_KEY=tu_api_key
+OPENAI_IMAGE_MODEL=gpt-image-1
+OPENAI_TEXT_MODEL=gpt-4o-mini
+```
+
+5. Redeploy.
+
+## Desarrollo local
 
 ```bash
 npm install
-cp .env.example .env.local
-# pega tu API key en .env.local
 npm run dev
 ```
 
-Abre: http://localhost:3000
+Abre `http://localhost:3000`.
 
-## Vercel
+## Nota
 
-1. Sube este proyecto a GitHub.
-2. Importa el repositorio en Vercel.
-3. Agrega variable de entorno:
-
-```bash
-OPENAI_API_KEY=tu_api_key
-```
-
-4. Deploy.
-
-## Importante
-
-La API Key nunca va en el frontend. Solo se usa dentro de `app/api/generate-image/route.ts`.
+No pongas tu API key en el frontend ni en GitHub. Usa `.env.local` localmente y Environment Variables en Vercel.
